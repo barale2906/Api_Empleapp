@@ -1,10 +1,23 @@
 import sequelize from './config/database';
 import express, { Application } from 'express';
+import bodyParser from 'body-parser';
+import userRoutes from './routes/userRoutes';
+import dotenv from 'dotenv';
+
+// Cargar variables de entorno
+dotenv.config();
 
 // Levantar el servidor
 const PORT = process.env.PORT || 3000;
 
 const app: Application = express();
+
+// Middlewares
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Rutas
+app.use('/users', userRoutes);
 
 // Al levantar el servidor
 app.listen(PORT, async () => {

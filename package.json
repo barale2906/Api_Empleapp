@@ -7,7 +7,7 @@
     "build": "tsc",
     "start": "node dist/app.js",
     "dev": "ts-node src/app.ts",
-    "sequelize": "ts-node -r tsconfig-paths/register ./node_modules/sequelize-cli/lib/sequelize"
+    "sequelize": "npm run build && ts-node -r tsconfig-paths/register ./node_modules/sequelize-cli/lib/sequelize"
 
   },
   "keywords": [],
