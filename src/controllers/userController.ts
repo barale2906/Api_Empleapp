@@ -55,7 +55,7 @@ export const deleteUser = async (req: Request, res: Response) => {
     }
 
     await user.destroy();
-    res.json({ message: 'Usuario eliminado correctamente' });
+    res.json({ message: 'Usuario eliminado correctamente' }).json(user);
   } catch (error) {
     res.status(500).json({ error: 'Error al eliminar el usuario' });
   }

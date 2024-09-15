@@ -12,12 +12,14 @@ const PORT = process.env.PORT || 3000;
 
 const app: Application = express();
 
+app.use(express.json());
+
 // Middlewares
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Rutas
-app.use('/users', userRoutes);
+app.use(userRoutes);
 
 // Al levantar el servidor
 app.listen(PORT, async () => {

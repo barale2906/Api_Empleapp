@@ -10,5 +10,6 @@ const sequelize = new sequelize_1.Sequelize(process.env.DB_NAME || 'database_dev
     host: process.env.DB_HOST || '127.0.0.1',
     dialect: 'mysql',
     timezone: '-05:00', // Configura a UTC
+    logging: console.log,
 });
 exports.default = sequelize;

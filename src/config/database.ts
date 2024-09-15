@@ -11,6 +11,7 @@ const sequelize = new Sequelize(
     host: process.env.DB_HOST || '127.0.0.1',
     dialect: 'mysql',
     timezone: '-05:00',  // Configura a UTC
+    logging: console.log,
   }
 );
 

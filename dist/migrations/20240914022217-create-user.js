@@ -17,7 +17,9 @@ module.exports = {
                 type: sequelize_1.DataTypes.STRING
             },
             email: {
-                type: sequelize_1.DataTypes.STRING
+                type: sequelize_1.DataTypes.STRING,
+                allowNull: false, // Asegúrate de que el campo no sea nulo
+                unique: true // Agrega la restricción de unicidad
             },
             createdAt: {
                 allowNull: false,

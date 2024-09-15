@@ -13,11 +13,12 @@ dotenv_1.default.config();
 // Levantar el servidor
 const PORT = process.env.PORT || 3000;
 const app = (0, express_1.default)();
+app.use(express_1.default.json());
 // Middlewares
 app.use(body_parser_1.default.json());
 app.use(body_parser_1.default.urlencoded({ extended: true }));
 // Rutas
-app.use('/users', userRoutes_1.default);
+app.use(userRoutes_1.default);
 // Al levantar el servidor
 app.listen(PORT, async () => {
     console.log(`Servidor corriendo en el puerto ${PORT}`);

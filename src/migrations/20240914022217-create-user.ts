@@ -16,7 +16,9 @@ module.exports = {
         type: DataTypes.STRING
       },
       email: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false,  // Asegúrate de que el campo no sea nulo
+        unique: true       // Agrega la restricción de unicidad
       },
       createdAt: {
         allowNull: false,
